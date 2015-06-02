@@ -1,0 +1,34 @@
+select * from cities
+select * from cities where id = 3;
+select * from cities where name = 'houston';
+
+select * from cities where photo like 'houston%';
+select * from cities where photo like '%.jpg';
+select * from cities where photo ilike '%.JPG';
+
+insert into cities (id, name, photo, created_at, updated_at) VALUES (6, 'amarillo', 'amarillo.jpg', now(), now());
+
+delete from cities where id = 6;
+
+
+update cities set name = 'Bryan/CollegeStation' where name='bryan';
+
+
+select * from cities order by id;
+select * from cities order by id DESC;
+
+select * from cities order by updated_at DESC LIMIT 1;
+
+
+/users/5;drop table users;
+
+=> params[:id]
+
+"select * from users where id = #{params[:id]}"
+
+
+"select * from users where id = 5;drop table users;"
+
+
+"select * from users where id = $1", "5;drop table users;"
+
